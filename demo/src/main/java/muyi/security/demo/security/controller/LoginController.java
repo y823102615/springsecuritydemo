@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class LoginController {
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
-    private JwtUtils jwtUtils;
-    private RedisUtils redisUtils;
+    private final JwtUtils jwtUtils;
+    private final RedisUtils redisUtils;
     @RequestMapping("/login")
-    public String hello(@Validated @RequestBody UserDto userDto){
+    public String hello( UserDto userDto){
 
         UsernamePasswordAuthenticationToken authenticationToken=new UsernamePasswordAuthenticationToken(userDto.getUsername(),userDto.getPassword());
         Authentication authentication=authenticationManagerBuilder.getObject().authenticate(authenticationToken);
@@ -35,7 +35,6 @@ public class LoginController {
         //将token存入redis来验证客户端的二次访问
         redisUtils.set("onlineuser:"+token,new UserDto(userDto.getUsername(),"***"));
         log.info("hello Controller generate token:"+token);
-
         return token;
 
     }

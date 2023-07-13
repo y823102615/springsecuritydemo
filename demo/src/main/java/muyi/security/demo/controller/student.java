@@ -19,7 +19,8 @@ public class student {
 
 
     @RequestMapping("/hello")
-    @PreAuthorize("@authorityCheck.check('hello')")
+    //@PreAuthorize("@authorityCheck.check('hello')")
+    @PreAuthorize("hasAuthority('hello')")
     public List<StudentInfo> hello(){
         List<StudentInfo>studentInfoList=null;
         studentInfoList=studentInfoService.list(null);

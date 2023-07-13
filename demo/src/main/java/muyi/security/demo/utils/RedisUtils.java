@@ -9,10 +9,10 @@ import java.time.Duration;
 @Component
 @RequiredArgsConstructor
 public class RedisUtils {
-    private RedisTemplate redisTemplate;
+    private final      RedisTemplate<Object, Object> redisTemplate;
 
     public void set(Object key,Object value){
-         redisTemplate.opsForValue().set(key,value, Duration.ofMinutes(5));
+         redisTemplate.opsForValue().set(key,value, Duration.ofMinutes(30));
     }
     public  Object get(Object key){
         return redisTemplate.opsForValue().get(key);

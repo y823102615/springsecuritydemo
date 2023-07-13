@@ -1,0 +1,16 @@
+2023-07-10 22:24:09.742 DEBUG 15236 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /hello
+2023-07-10 22:24:09.743 DEBUG 15236 --- [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/hello", parameters={}
+2023-07-10 22:24:09.744 DEBUG 15236 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to muyi.security.demo.controller.student#hello()
+2023-07-10 22:24:09.744  INFO 15236 --- [http-nio-8081-exec-6] m.security.demo.service.AuthorityCheck   : 正在请求 访问接口：hello的权限
+2023-07-10 22:24:09.745 DEBUG 15236 --- [http-nio-8081-exec-6] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2023-07-10 22:24:09.747 DEBUG 15236 --- [http-nio-8081-exec-6] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2023-07-10 22:24:09.748  INFO 15236 --- [http-nio-8081-exec-6] m.s.d.security.UserDetailsServiceImpl    : from UserDetails get Logininfo
+2023-07-10 22:24:09.748 DEBUG 15236 --- [http-nio-8081-exec-6] o.s.s.a.i.a.MethodSecurityInterceptor    : Authorized ReflectiveMethodInvocation: public java.util.List muyi.security.demo.controller.student.hello(); target is of class [muyi.security.demo.controller.student] with attributes [[authorize: '@authorityCheck.check('hello')', filter: 'null', filterTarget: 'null']]
+2023-07-10 22:24:09.753 DEBUG 15236 --- [http-nio-8081-exec-6] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2023-07-10 22:24:09.779 DEBUG 15236 --- [http-nio-8081-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-07-10 22:24:09.780 DEBUG 15236 --- [http-nio-8081-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[StudentInfo(id=1, name=张三, age=18), StudentInfo(id=2, name=李四, age=18)]]
+2023-07-10 22:24:09.805 DEBUG 15236 --- [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-07-10 22:24:09.805 DEBUG 15236 --- [http-nio-8081-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2023-07-10 22:33:30.412 DEBUG 15236 --- [SpringApplicationShutdownHook] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2023-07-10 22:33:30.413 DEBUG 15236 --- [SpringApplicationShutdownHook] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@435fb7b5, started on Mon Jul 10 21:54:19 CST 2023
+2023-07-10 22:33:30.413 DEBUG 15236 --- [SpringApplicationShutdownHook] ySourcesPropertyResolver$DefaultResolver : Found key 'spring.liveBeansView.mbeanDomain' in PropertySource 'systemProperties' with value of type String

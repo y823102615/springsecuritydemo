@@ -2,6 +2,7 @@ package muyi.security.demo.security.config;
 
 import lombok.RequiredArgsConstructor;
 import muyi.security.demo.security.JwtAuthenticationEntryPoint;
+import muyi.security.demo.service.AuthorityInfoService;
 import muyi.security.demo.utils.JwtUtils;
 import muyi.security.demo.utils.RedisUtils;
 import org.springframework.context.annotation.Bean;
@@ -25,11 +26,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfig  {
 
-    private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
-    private JwtAccessDeniedHandler jwtAccessDeniedHandler;
+    private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+    private final  JwtAccessDeniedHandler jwtAccessDeniedHandler;
 
-    private RedisUtils redisUtils;
-    private JwtUtils jwtUtils;
+    private final  RedisUtils redisUtils;
+    private  final JwtUtils jwtUtils;
+    private  final AuthorityInfoService authorityInfoService;
+    @Bean
     public SecurityFilterChain filterChain(HttpSecurity http)throws Exception{
 
         return http.csrf().disable()
@@ -37,7 +40,6 @@ public class SecurityConfig  {
                 .accessDeniedHandler(jwtAccessDeniedHandler)
                 //防止iframe 跨域
                 .and()
-                .addFilterBefore(new TokenFilter(redisUtils,jwtUtils), UsernamePasswordAuthenticationFilter.class)
                 .headers()
                 .frameOptions()
                 .disable()
@@ -47,15 +49,22 @@ public class SecurityConfig  {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST,
+                .antMatchers(
                         "/login").permitAll()
                 .anyRequest().authenticated()
-                .and().formLogin().disable()
+                .and()
+                .apply(securityConfigurerAdapter())
+                .and()
                 .build();
     }
     @Bean
     public PasswordEncoder passwordEncoder(){
         return  new BCryptPasswordEncoder();
     }
+
+    private TokenConfig  securityConfigurerAdapter(){
+        return new TokenConfig(redisUtils,jwtUtils,authorityInfoService);
+    }
+
 
 }

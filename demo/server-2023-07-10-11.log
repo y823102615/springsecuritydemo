@@ -1,0 +1,20 @@
+2023-07-10 21:55:02.018  INFO 15236 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-10 21:55:02.019  INFO 15236 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-10 21:55:02.019 DEBUG 15236 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2023-07-10 21:55:02.019 DEBUG 15236 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2023-07-10 21:55:02.019 DEBUG 15236 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2023-07-10 21:55:02.020 DEBUG 15236 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@17bc8914
+2023-07-10 21:55:02.020 DEBUG 15236 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4662dd4c
+2023-07-10 21:55:02.020 DEBUG 15236 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-07-10 21:55:02.020  INFO 15236 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-07-10 21:55:02.027 DEBUG 15236 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /login
+2023-07-10 21:55:02.030 DEBUG 15236 --- [http-nio-8081-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2023-07-10 21:55:02.035 DEBUG 15236 --- [http-nio-8081-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store empty SecurityContext
+2023-07-10 21:55:02.036 DEBUG 15236 --- [http-nio-8081-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store empty SecurityContext
+2023-07-10 21:55:02.036 DEBUG 15236 --- [http-nio-8081-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2023-07-10 21:55:36.705 DEBUG 15236 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /login
+2023-07-10 21:55:36.706 DEBUG 15236 --- [http-nio-8081-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2023-07-10 21:55:36.825 DEBUG 15236 --- [http-nio-8081-exec-3] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2023-07-10 21:55:36.825  INFO 15236 --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-10 21:55:36.910  INFO 15236 --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-10 21:55:36.950 DEBUG 15236 --- [http-nio-8081-exec-3] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
